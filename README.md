@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+React-shopping-list App
 
 
 ## Available Scripts
