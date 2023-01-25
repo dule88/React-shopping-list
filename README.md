@@ -1,4 +1,4 @@
-## React Shoppin list App
+## React Shopping list App
 
 
 ## Available Scripts
