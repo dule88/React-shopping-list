@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Cart from './components/Cart/Cart';
 import Edit from './components/Edit/Edit';
+import Form from './components/Form/Form';
 
 
 const App = () => {
@@ -29,8 +30,8 @@ const App = () => {
   return (
     <div className="App">
         <h1>Shopping List</h1>
-        <Edit></Edit>
-        <Cart></Cart>
+        <Edit/>
+        <Cart/>
     </div>
   );
 }
