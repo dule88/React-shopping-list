@@ -8,6 +8,7 @@ const Edit = (props) => {
     <div className={styles.container}>
         <div className={styles.list}>
         <h2>Please enter a Grocerie:</h2>
+        
         {props.componentForm}
         
        

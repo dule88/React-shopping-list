@@ -13,13 +13,20 @@ const Form = ({setGroceries}) => {
       name: grocerieValue
     };
 
-    setGroceries(previousGrocerie => [...previousGrocerie, newGrocerie])
+    if(grocerieValue !== '') {
+      setGroceries(previousGrocerie => [...previousGrocerie, newGrocerie])
+
+      setgrocerieValue('')
+    }
+
+    
   }
   
   return (
     <form onSubmit={formSubmited}>
           <input className={styles.inputForm} type="text" value={grocerieValue} onChange={(event) => {setgrocerieValue(event.target.value)}}  placeholder='Enter Grocerie'></input>
           <button className={styles.btn}>Cart</button>
+          
     </form>
   )
 }

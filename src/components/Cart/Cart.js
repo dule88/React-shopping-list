@@ -1,7 +1,18 @@
 import React from 'react';
 import styles from './Cart.module.css';
 
-const Cart = ({ groceries }) => {
+const Cart = ({ groceries, setGroceries }) => {
+
+  const deleteGrocerie = (idx) => {
+
+    setGroceries(prevState => {
+      let tempstate = [...prevState];
+      tempstate.splice(idx,1);
+      return tempstate;
+    })
+  }
+
+ 
 
   return (
     <div className={styles.container}>
@@ -12,7 +23,8 @@ const Cart = ({ groceries }) => {
             return (
             
               <li key={idx}>
-                {idx + 1}  {grocerie.name}
+                {`${idx + 1}.`}  {grocerie.name}
+                <button  onClick={() => {deleteGrocerie(idx)}}>X</button>
               </li>
             )
           })}

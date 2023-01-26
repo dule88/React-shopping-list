@@ -36,7 +36,7 @@ const App = () => {
         >
         </Edit>
 
-        <Cart groceries={groceries}/>
+        <Cart groceries={groceries} setGroceries={setGroceries}/>
 
     </div>
   );
