@@ -22,3 +22,7 @@ h2 {
     overflow: auto;
 }
 
+li{
+    list-style: none;
+}
+

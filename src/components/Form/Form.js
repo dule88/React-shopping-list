@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Form.module.css';
 
 
-const Form = () => {
+const Form = ({setGroceries}) => {
+
+  const [grocerieValue, setgrocerieValue] = useState('');
+
+  const formSubmited = (event) =>{
+    event.preventDefault();
+
+    let newGrocerie = {
+      name: grocerieValue
+    };
+
+    setGroceries(previousGrocerie => [...previousGrocerie, newGrocerie])
+  }
+  
   return (
-    <form>
-          <input className={styles.inputForm} type="text" placeholder='Enter Grocerie'></input>
+    <form onSubmit={formSubmited}>
+          <input className={styles.inputForm} type="text" value={grocerieValue} onChange={(event) => {setgrocerieValue(event.target.value)}}  placeholder='Enter Grocerie'></input>
           <button className={styles.btn}>Cart</button>
     </form>
   )
