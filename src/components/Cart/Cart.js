@@ -1,9 +1,10 @@
-import React from 'react';
 import styles from './Cart.module.css';
 
+
+//FUNCTION FOR DELETING GROCERY FROM THE LIST
 const Cart = ({ groceries, setGroceries }) => {
 
-  const deleteGrocerie = (idx) => {
+  const deleteGrocery = (idx) => {
 
     setGroceries(prevState => {
       let tempstate = [...prevState];
@@ -12,24 +13,23 @@ const Cart = ({ groceries, setGroceries }) => {
     })
   }
 
- 
 
   return (
     <div className={styles.container}>
         <div className={styles.list}>
-        <h2>List of Groceries</h2>
+        <h2>List of groceries</h2>
         <ul>
-          {groceries.map((grocerie, idx) =>{
+
+          {groceries.map((grocery, idx) =>{
             return (
             
               <li key={idx}>
-                {`${idx + 1}.`}  {grocerie.name}
-                <button  onClick={() => {deleteGrocerie(idx)}}>X</button>
+                {`${idx + 1}.`}  {grocery.name}
+                <button  onClick={() => {deleteGrocery(idx)}}>X</button>
               </li>
             )
           })}
-           
-          
+    
         </ul>
         </div>
     </div>

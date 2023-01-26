@@ -1,17 +1,15 @@
-import React from 'react';
 import styles from './Edit.module.css';
 
 
-const Edit = (props) => {
+const Edit = ({componentForm}) => {
 
   return (
     <div className={styles.container}>
         <div className={styles.list}>
-        <h2>Please enter a Grocerie:</h2>
+          
+        <h2>Please enter a grocery:</h2>
+        {componentForm}
         
-        {props.componentForm}
-        
-       
         </div>
     </div>
   )

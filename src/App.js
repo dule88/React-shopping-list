@@ -7,26 +7,22 @@ import Form from './components/Form/Form';
 
 const App = () => {
 
-  // const [editMode, setEditMode] = useState({mode:false, id:'', name: ''})
-
   const [groceries, setGroceries] = useState([
-      {
+      // {
         
-        name: 'Kikiriki'
-      },
-      {
+      //   name: 'Beer'
+      // },
+      // {
         
-        name: 'Pivo'
-      },
-      {
+      //   name: 'Salad'
+      // },
+      // {
         
-        name: 'Cips'
-      },
+      //   name: 'Juice'
+      // },
   ]);
 
-  // console.log(groceries);
-  // console.log(editMode);
-
+  
   return (
     <div className="App">
         <h1>Shopping List</h1>

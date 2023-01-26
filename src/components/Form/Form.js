@@ -1,31 +1,32 @@
-import React, { useState } from 'react'
+import{ useState } from 'react'
 import styles from './Form.module.css';
 
 
 const Form = ({setGroceries}) => {
 
-  const [grocerieValue, setgrocerieValue] = useState('');
+  const [groceryValue, setgroceryValue] = useState('');
 
-  const formSubmited = (event) =>{
+  // FUNCTION THAT ADD GROCERIES TO THE LIST
+  const addToCart = (event) =>{
     event.preventDefault();
 
-    let newGrocerie = {
-      name: grocerieValue
+    let newGrocery = {
+      name: groceryValue
     };
 
-    if(grocerieValue !== '') {
-      setGroceries(previousGrocerie => [...previousGrocerie, newGrocerie])
+    if(groceryValue !== '') {
+      setGroceries(previousGrocery => [...previousGrocery, newGrocery])
 
-      setgrocerieValue('')
+      setgroceryValue('');
+      
     }
-
-    
   }
-  
+
+
   return (
-    <form onSubmit={formSubmited}>
-          <input className={styles.inputForm} type="text" value={grocerieValue} onChange={(event) => {setgrocerieValue(event.target.value)}}  placeholder='Enter Grocerie'></input>
-          <button className={styles.btn}>Cart</button>
+    <form>
+          <input className={styles.inputForm} type="text" value={groceryValue} onChange={(event) => {setgroceryValue(event.target.value)}}  placeholder='Enter Grocery'></input>
+          <button onClick={addToCart} className={styles.btn}>Cart</button>
           
     </form>
   )
